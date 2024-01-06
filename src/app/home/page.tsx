@@ -8,8 +8,8 @@ export default function home() {
 
     // Replace javascript:void(0) paths with your paths
     const navigation = [
-        { title: "Upload", path: "javascript:void(0)" },
-        { title: "Files", path: "javascript:void(0)" },
+        { title: "Upload", path: "/upload" },
+        { title: "Files", path: "/files" },
         { title: "Account", path: "javascript:void(0)" },
         { title: "Contact us", path: "javascript:void(0)" }
     ]
@@ -67,7 +67,7 @@ export default function home() {
                                     })
                                 }
                                 <li>
-                                    <a href="javascript:void(0)" className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-sky-500 hover:bg-sky-400 active:bg-sky-600 duration-150 rounded-full md:inline-flex">
+                                    <a href="/" className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-sky-500 hover:bg-sky-400 active:bg-sky-600 duration-150 rounded-full md:inline-flex">
                                         Sign Out
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                                             <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
@@ -80,8 +80,11 @@ export default function home() {
                 </nav>
             </header>
             <section className="relative">
-                <div className="relative z-10 max-w-screen-xl mx-auto px-4 py-28 md:px-8">
+                <div className="relative z-10 max-w-screen-xl mx-auto px-4 py-20 md:px-8">
                     <div className="space-y-5 max-w-4xl mx-auto text-center">
+                        <h2 className="text-4xl text-white font-extrabold mx-auto md:text-5xl">
+                            Hello Jos,
+                        </h2>
                         <h2 className="text-4xl text-white font-extrabold mx-auto md:text-5xl">
                             Save all you photos and documents without worry
                         </h2>

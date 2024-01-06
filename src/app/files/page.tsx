@@ -1,19 +1,32 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import S3UploadForm from '@/app/components/S3UploadForm'
 
-export default function upload() {
+export default function files() {
 
-    const [state, setState] = useState(false)
+    const team = [
+        {
+            avatar: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            name: "dog.jpeg",
+        },
+        {
+            avatar: "https://images.unsplash.com/photo-1621135802920-133df287f89c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            name: "car.png",
+        },
+        {
+            avatar: "",
+            name: "test.pdf",
+        },
+    ]
 
-    // Replace javascript:void(0) paths with your paths
     const navigation = [
         { title: "Home", path: "/home" },
-        { title: "Files", path: "/files" },
+        { title: "Upload", path: "/upload" },
         { title: "Account", path: "javascript:void(0)" },
         { title: "Settings", path: "javascript:void(0)" }
     ]
+
+    const [state, setState] = useState(false)
 
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
@@ -46,7 +59,7 @@ export default function upload() {
     )
 
     return (
-        <main className="w-full h-screen items-center bg-gray-50 sm:px-4">
+        <section className="">
             <header>
                 <div className={`md:hidden ${state ? "mx-2 pb-5" : "hidden"}`}>
                     <Brand />
@@ -80,7 +93,36 @@ export default function upload() {
                     </div>
                 </nav>
             </header>
-            <S3UploadForm/>
-        </main>
+            <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+                <div className="max-w-xl mx-auto sm:text-center">
+                    <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
+                        Your Files
+                    </h3>
+                    <p className="text-gray-600 text-xl mt-3">
+                        Below you can view all your uploaded files
+                    </p>
+                </div>
+                <div className="mt-12">
+                    <ul className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+                        {
+                            team.map((item, idx) => (
+                                <li key={idx}>
+                                    <div className="w-full h-60 sm:h-52 md:h-56">
+                                        <img
+                                            src={item.avatar}
+                                            className="w-full h-full object-cover object-center shadow-md rounded-xl"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="mt-4 mb-20">
+                                        <h4 className="text-lg text-gray-700 font-semibold">{item.name}</h4>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </section>
     )
 }
