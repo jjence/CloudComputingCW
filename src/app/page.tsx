@@ -8,9 +8,7 @@ export default function MainPage () {
     const navigation = [
         { title: "About", path: "/about" },
         { title: "Features", path: "/features" },
-        { title: "Contact Us", path: "/contactUs" },
-        { title: "Home", path: "/home" },
-        { title: "Upload", path: "/upload" }
+        { title: "Contact Us", path: "/contactUs" }
     ]  
 
       return (
